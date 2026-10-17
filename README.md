@@ -13,3 +13,10 @@ Maintained by the QA team in Git so scripts are no longer shared over email or p
 ## Tools
 - Python 3
 - Selenium WebDriver (Chrome)
+
+## How to run
+```
+pip install selenium
+python login_test.py
+python attendance_marking_test.py
+```
