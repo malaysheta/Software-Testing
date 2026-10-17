@@ -20,3 +20,14 @@ def test_valid_login():
 if __name__ == "__main__":
     test_valid_login()
     print("Login test passed")
+
+
+def test_invalid_password():
+    driver = webdriver.Chrome()
+    driver.get(BASE_URL + "/login")
+    driver.find_element(By.ID, "username").send_keys("faculty01")
+    driver.find_element(By.ID, "password").send_keys("wrong-pass")
+    driver.find_element(By.ID, "loginBtn").click()
+    error = driver.find_element(By.ID, "errorMsg").text
+    assert "Invalid username or password" in error
+    driver.quit()
